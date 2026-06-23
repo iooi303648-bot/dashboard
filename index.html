@@ -27,7 +27,11 @@
     </header>
 
     <main class="app-container">
-        <div class="cards-grid">
+        <div class="slider-outer-container">
+            <button id="prev-btn" class="nav-arrow-btn">◀</button>
+            
+            <div class="slider-container">
+                <div class="slider-track" id="slider-track">
             
             <!-- CARD 1: TITLE -->
             <div class="card-slide card-theme-title" id="card-1">
@@ -292,7 +296,15 @@
                     <span class="page-number" style="box-shadow: none;">9 / 9</span>
                 </div>
             </div>
-
+            
+                </div> <!-- Closes #slider-track -->
+            </div> <!-- Closes .slider-container -->
+            
+            <button id="next-btn" class="nav-arrow-btn">▶</button>
+        </div>
+        
+        <div class="slider-dots-container">
+            <div class="slider-dots" id="slider-dots"></div>
         </div>
     </main>
 

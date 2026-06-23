@@ -125,18 +125,34 @@ body {
     padding: 0 20px;
 }
 
-/* Grid of Cards */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
-    gap: 40px;
+/* Slider Layout styling */
+.slider-outer-container {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.slider-container {
+    width: 540px;
+    height: 540px;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Individual Card Slide (strictly 540px x 540px) */
 .card-slide {
     width: 540px;
     height: 540px;
+    flex: 0 0 540px; /* Don't grow, don't shrink, exact width */
     border: 4px solid var(--color-border);
     border-radius: 28px;
     position: relative;
@@ -780,4 +796,311 @@ body {
     color: #8b5cf6;
     animation: pulse 1.5s infinite;
 }
+
+/* SLIDER CONTROLS (ARROWS & PAGINATION) */
+.nav-arrow-btn {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    background-color: var(--pastel-yellow);
+    color: var(--text-main);
+    border: 3px solid var(--color-border);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0px var(--color-border);
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.nav-arrow-btn:hover:not(:disabled) {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0px var(--color-border);
+}
+
+.nav-arrow-btn:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px var(--color-border);
+}
+
+.nav-arrow-btn:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    border-color: #94a3b8;
+    box-shadow: 0px 0px 0px var(--color-border);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px 0px var(--color-border);
+    transition: all 0.2s ease;
+}
+
+.slider-dot.active {
+    background-color: #8b5cf6;
+    transform: scale(1.25);
+    box-shadow: 2px 2px 0px var(--color-border);
+}
+
+/* RESPONSIVE DESIGN (MOBILE SLIDER) */
+@media (max-width: 680px) {
+    .app-container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .slider-outer-container {
+        gap: 8px;
+    }
+    
+    .nav-arrow-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-width: 2.5px;
+        box-shadow: 2px 2px 0px var(--color-border);
+    }
+    
+    .slider-container {
+        width: 320px;
+        height: 320px;
+        border-radius: 20px;
+    }
+    
+    .card-slide {
+        width: 320px;
+        height: 320px;
+        flex: 0 0 320px;
+        padding: 20px;
+        border-radius: 20px;
+        border-width: 3px;
+        box-shadow: 5px 5px 0px var(--color-border);
+    }
+    
+    /* Typography scaling for mobile card sizes */
+    .title-main {
+        font-size: 1.7rem;
+        margin-bottom: 8px;
+    }
+    .title-main-ending {
+        font-size: 1.35rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    .title-sub {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+    .title-desc {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+    .card-badge {
+        font-size: 0.72rem;
+        padding: 3px 8px;
+        border-radius: 8px;
+    }
+    .step-title {
+        font-size: 0.95rem;
+    }
+    .step-badge {
+        font-size: 0.72rem;
+        padding: 2px 8px;
+    }
+    .step-badge-warning {
+        font-size: 0.72rem;
+        padding: 2px 8px;
+    }
+    .body-intro {
+        font-size: 0.72rem;
+    }
+    
+    /* Layout components scaling */
+    .card-body {
+        margin: 8px 0;
+        gap: 8px;
+    }
+    .flow-box {
+        padding: 6px 12px;
+        border-radius: 12px;
+        border-width: 2px;
+        box-shadow: 2px 2px 0px var(--color-border);
+    }
+    .flow-text {
+        font-size: 0.72rem;
+    }
+    .flow-num {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
+        border-width: 1.5px;
+    }
+    .flow-arrow {
+        font-size: 0.95rem;
+    }
+    .cute-tip {
+        padding: 6px 10px;
+        border-radius: 10px;
+        border-width: 2px;
+        gap: 8px;
+    }
+    .tip-icon {
+        font-size: 0.95rem;
+    }
+    .tip-text {
+        font-size: 0.68rem;
+    }
+    .bubble-chat {
+        gap: 8px;
+        margin: 4px 0;
+    }
+    .cute-character {
+        font-size: 1.8rem;
+    }
+    .chat-bubble {
+        padding: 8px 12px;
+        font-size: 0.72rem;
+        border-width: 2px;
+        border-radius: 14px;
+    }
+    .click-guide-box {
+        padding: 10px;
+        border-radius: 12px;
+        border-width: 2px;
+        gap: 6px;
+    }
+    .click-path {
+        font-size: 0.9rem;
+    }
+    .click-finger {
+        font-size: 1rem;
+    }
+    
+    .screen-mockup {
+        max-height: 95px;
+        border-width: 2px;
+        border-radius: 12px;
+        box-shadow: 2px 2px 0px var(--color-border);
+    }
+    
+    .half-width {
+        max-height: 60px;
+    }
+    .split-arrow {
+        font-size: 1rem;
+    }
+    
+    .worry-comparison {
+        padding: 6px;
+        border-radius: 12px;
+        border-width: 1.5px;
+    }
+    .worry-emoji {
+        font-size: 1.3rem;
+    }
+    .worry-item p {
+        font-size: 0.65rem;
+        margin-top: 2px;
+    }
+    .worry-not-equal {
+        font-size: 1.5rem;
+    }
+    .speech-bubble {
+        padding: 8px 12px;
+        border-radius: 12px;
+        border-width: 2px;
+    }
+    .speech-bubble strong {
+        font-size: 0.72rem;
+        margin-bottom: 2px;
+    }
+    .speech-bubble p {
+        font-size: 0.68rem;
+    }
+    
+    .k-item {
+        padding: 6px 10px;
+        border-radius: 10px;
+        border-width: 1.5px;
+    }
+    .k-badge {
+        font-size: 0.68rem;
+        padding: 2px 6px;
+        border-radius: 6px;
+    }
+    .k-item p {
+        font-size: 0.68rem;
+    }
+    .step-guide-item {
+        padding: 8px 12px;
+        border-radius: 12px;
+        border-width: 2px;
+        gap: 10px;
+    }
+    .guide-num {
+        width: 20px;
+        height: 20px;
+        font-size: 0.75rem;
+    }
+    .step-guide-item p {
+        font-size: 0.72rem;
+    }
+    
+    .ending-tips {
+        margin: 5px 0;
+        gap: 4px;
+    }
+    .e-tip-item {
+        padding: 5px 10px !important;
+        border-radius: 12px;
+    }
+    .e-emoji {
+        font-size: 1.1rem;
+    }
+    .e-tip-item p {
+        font-size: 0.72rem;
+    }
+    .ending-cheer {
+        font-size: 0.85rem !important;
+    }
+    
+    /* Footer scaling */
+    .card-footer {
+        padding-top: 8px;
+    }
+    .footer-subtitle {
+        font-size: 0.65rem;
+    }
+    .page-number {
+        font-size: 0.72rem;
+        padding: 2px 6px;
+        border-width: 1.5px;
+    }
+    .footer-tag {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+}
+
 
