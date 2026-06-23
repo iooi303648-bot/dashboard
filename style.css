@@ -876,32 +876,43 @@ body {
     }
 
     .slider-outer-container {
-        gap: 8px;
-    }
-    
-    .nav-arrow-btn {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-        border-width: 2.5px;
-        box-shadow: 2px 2px 0px var(--color-border);
+        position: relative;
+        display: block;
+        width: min(100%, 380px);
+        margin: 0 auto;
     }
     
     .slider-container {
-        width: 320px;
-        height: 320px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
         border-radius: 20px;
     }
     
     .card-slide {
-        width: 320px;
-        height: 320px;
-        flex: 0 0 320px;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
         padding: 20px;
         border-radius: 20px;
         border-width: 3px;
         box-shadow: 5px 5px 0px var(--color-border);
     }
+    
+    .nav-arrow-btn {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-width: 2.5px;
+        box-shadow: 2px 2px 0px var(--color-border);
+        transform: translateY(-50%);
+    }
+    
+    #prev-btn { left: -18px; }
+    #next-btn { right: -18px; }
     
     /* Typography scaling for mobile card sizes */
     .title-main {
