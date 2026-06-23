@@ -865,6 +865,11 @@ body {
 
 /* RESPONSIVE DESIGN (MOBILE SLIDER) */
 @media (max-width: 680px) {
+    /* 모바일에서는 카드 내용에 집중할 수 있도록 상단 영역을 숨긴다. */
+    .app-header {
+        display: none;
+    }
+
     .app-container {
         margin: 20px auto;
         padding: 0 10px;
@@ -1102,5 +1107,4 @@ body {
         padding: 2px 6px;
     }
 }
-
 
