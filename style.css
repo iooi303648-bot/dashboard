@@ -370,6 +370,9 @@ body {
     font-size: 0.85rem;
     line-height: 1.4;
 }
+.ending-cheer {
+    word-break: keep-all;
+}
 
 /* BUBBLE CHAT (Step 2 Layout) */
 .bubble-chat {
