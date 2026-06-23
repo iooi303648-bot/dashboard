@@ -1137,12 +1137,6 @@ body {
 }
 
 
-/* 개인정보 보호: 학습자 이름을 가린다. */
-.privacy-mask-name { position: relative; }
-.privacy-mask-name::before,
-.privacy-mask-name::after { content: ''; position: absolute; z-index: 1; background: #94a3b8; border-radius: 4px; }
-.privacy-mask-name::before { left: 23%; top: 14%; width: 13%; height: 9%; }
-.privacy-mask-name::after { left: 21%; top: 51%; width: 13%; height: 12%; }
 
 /* 상세 화면은 한 장씩 크게 보여 준다. */
 .screen-mockup.detail-large { max-height: 260px; }
