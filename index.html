@@ -6,7 +6,7 @@
     <title>학생용 대시보드 안내 카드뉴스</title>
     <!-- Google Fonts: Jua & Noto Sans KR -->
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260623-6">
+    <link rel="stylesheet" href="style.css?v=20260623-4">
     <!-- html2canvas for image generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
@@ -322,27 +322,6 @@
     </footer>
 
     <script src="app.js"></script>
-    <style>
-        body.card-export { background: #f5f3ff; padding: 0; width: 560px; height: 560px; overflow: hidden; }
-        body.card-export .app-header,
-        body.card-export .app-footer,
-        body.card-export .nav-arrow-btn,
-        body.card-export .slider-dots-container { display: none !important; }
-        body.card-export .app-container { margin: 0; padding: 0; width: 560px; height: 560px; display: flex; align-items: center; justify-content: center; }
-        body.card-export .slider-outer-container { display: block; width: 540px; height: 540px; }
-        body.card-export .slider-container { width: 540px; height: 540px; overflow: visible; }
-        body.card-export .slider-track { display: block; transform: none !important; }
-        body.card-export .card-slide { display: none !important; }
-        body.card-export .card-slide.export-target { display: flex !important; }
-    </style>
-    <script>
-      (() => {
-        const number = Number(new URLSearchParams(location.search).get('card')) || 1;
-        document.body.classList.add('card-export');
-        document.querySelectorAll('.card-slide').forEach((card) => card.classList.remove('export-target'));
-        document.getElementById(`card-${number}`)?.classList.add('export-target');
-      })();
-    </script>
 </body>
 </html>
 
