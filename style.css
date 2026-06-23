@@ -369,15 +369,13 @@ body {
 .tip-text {
     font-size: 0.85rem;
     line-height: 1.4;
-}
-.ending-cheer {
-    word-break: keep-all;
+    word-break: keep-all; /* 👈 철자와 맨 끝 세미콜론(;)을 확인하세요! */
 }
 
 /* BUBBLE CHAT (Step 2 Layout) */
 .bubble-chat {
     display: flex;
-    gap: 15px;
+    gap: 15px;S
     align-items: center;
     margin: 10px 0;
 }
